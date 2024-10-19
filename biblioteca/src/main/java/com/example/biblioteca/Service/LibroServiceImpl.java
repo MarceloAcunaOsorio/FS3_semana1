@@ -26,4 +26,35 @@ public class LibroServiceImpl implements LibroService {
         return libroRepository.findById(id);
     }
     
+
+    //crear libro
+    @Override
+    public Libros createLibro(Libros libros){
+        return libroRepository.save(libros);
+    }
+
+
+
+    //Actualizar Libro
+    @Override
+    public Libros updateLibro(Long id, Libros libros){
+        if(libroRepository.existsById(id))
+        {
+          libros.set_id(id);
+          return libroRepository.save(libros);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+
+
+    //Eliminar
+    @Override
+    public void deleteLibro(Long id){
+        libroRepository.deleteById(id);
+    }
+    
 }

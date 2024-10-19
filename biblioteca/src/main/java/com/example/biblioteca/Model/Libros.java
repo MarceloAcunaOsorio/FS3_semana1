@@ -15,7 +15,7 @@ public class Libros {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "id")
-    private int _id;
+    private Long _id;
 
     @Column(name = "titulo")
     private String _titulo;
@@ -30,23 +30,13 @@ public class Libros {
     private String _genero;
     
     
-    //Constructor
-    public Libros (int id, String titulo, String autor, int añoPublicacion, String genero)
-    {
-        this._id = id;
-        this._titulo = titulo;
-        this._autor = autor;
-        this._añoPublicacion = añoPublicacion;
-        this._genero = genero;
-    }
-    
 
     //Getter y Setter
 
-    public int get_id() {
+    public Long get_id() {
         return _id;
     }
-    public void set_id(int _id) {
+    public void set_id(Long _id) {
         this._id = _id;
     }
     public String get_titulo() {
