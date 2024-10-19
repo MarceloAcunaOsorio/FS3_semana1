@@ -1,11 +1,32 @@
-package com.example.biblioteca;
+package com.example.biblioteca.Model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "Libro")
 public class Libros {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Column(name = "id")
     private int _id;
+
+    @Column(name = "titulo")
     private String _titulo;
+
+    @Column(name = "autor")
     private String _autor;
+
+    @Column(name = "añoPublicacion")
     private int _añoPublicacion;
+
+    @Column(name = "genero")
     private String _genero;
     
     
